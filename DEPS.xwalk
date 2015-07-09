@@ -17,8 +17,8 @@
 # Edit these when rolling DEPS.xwalk.
 # -----------------------------------
 
-chromium_crosswalk_rev = '85524171c5da96eb0e83623a2a88606fffa22700'
-v8_crosswalk_rev = 'af82ca6ca297677b03c6a9be952633b5b1b28b5a'
+chromium_crosswalk_rev = '3854724601dd72d6822b269fd3802efa127ac5d8'
+v8_crosswalk_rev = '5dfeaefcb27d9583cd75db995e97a1659344d05d'
 ozone_wayland_rev = '81e4b41be7511971011c7ced9c70131713d7541e'
 
 # |blink_crosswalk_rev| specifies the SHA1 hash of the blink-crosswalk commit
@@ -27,8 +27,8 @@ ozone_wayland_rev = '81e4b41be7511971011c7ced9c70131713d7541e'
 # the blink-crosswalk repository, so that the devtools code can use it to fetch
 # assets from Chromium's servers with a revision that exists there. We need an
 # SVN revision while Blink is still in SVN.
-blink_crosswalk_rev = '5d8a63a4c62f4b54786d21e815584045adb84e2d'
-blink_upstream_rev = '199158'
+blink_crosswalk_rev = '04f5b63b778b9acab9eaab9e81b48641286ca8ca'
+blink_upstream_rev = '197583'
 
 crosswalk_git = 'https://github.com/crosswalk-project'
 ozone_wayland_git = 'https://github.com/01org'
@@ -55,13 +55,11 @@ solutions = [
         'https://cvs.khronos.org/svn/repos/registry/trunk/public/cl/api/1.2@'
            '28150',
 
-      # Temporarily roll ffmpeg forward.
-      # We need commit 408c4b08 which introduces the |ffmpeg_component|
-      # variable so that we can continue building ffmpeg as a shared library
-      # for the time being (see https://crrev.com/1141703002 and
-      # https://groups.google.com/a/chromium.org/d/msg/chromium-packagers/R5rcZXWxBEQ/B6k0zzmJbvcJ.
+# Temporarily roll FFMPEG a backwards compared to Chromium as a temporary fix for
+# https://codereview.chromium.org/1141703002 This needs
+# ffmpeg_component=shared_library in gyp
       'src/third_party/ffmpeg':
-         'https://chromium.googlesource.com/chromium/third_party/ffmpeg.git@408c4b08fab5cbaa284847f8c573fe939cada87c',
+         'https://chromium.googlesource.com/chromium/third_party/ffmpeg.git@0ec2f1eee82359bb9c02a912feb1914a3a169cbe',
 
       # These directories are not relevant to Crosswalk and can be safely ignored
       # in a checkout. It avoids creating additional directories outside src/ that
