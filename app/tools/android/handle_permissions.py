@@ -42,7 +42,13 @@ permission_mapping_table = {
     'presentation': [],
     'rawsockets': [],
     'screenorientation': [],
-    'vibration': ['android.permission.VIBRATE']
+    'vibration': ['android.permission.VIBRATE'],
+    'camera': ['android.permission.CAMERA'],
+    'network': ['android.permission.ACCESS_NETWORK_STATE',
+                'android.permission.ACCESS_WIFI_STATE',
+                'android.permission.INTERNET'],
+    'wake': ['android.permission.WAKE_LOCK'],
+    'storage': ['android.permission.WRITE_EXTERNAL_STORAGE']
 }
 
 
